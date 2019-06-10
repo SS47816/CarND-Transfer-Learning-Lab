@@ -48,6 +48,18 @@ def main(_):
     # 43 for traffic
 
     # TODO: train your model here
+    nb_classes = len(np.unique(y_train))
+
+    # define model
+    input_shape = X_train.shape[1:]
+    inp = Input(shape=input_shape)
+    x = Flatten()(inp)
+    x = Dense(nb_classes, activation='softmax')(x)
+    model = Model(inp, x)
+    model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+    # train model
+    model.fit(X_train, y_train, FLAGS.batch_size, FLAGS.epochs, validation_data=(X_val, y_val), shuffle=True)
 
 
 # parses flags and calls the `main` function above

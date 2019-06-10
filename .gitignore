@@ -2,3 +2,10 @@ data
 models
 .ipynb_checkpoints
 bottlenecks
+
+inception-cifar10-bottleneck-data/
+inception-traffic-bottleneck-data/
+resnet-cifar10-bottleneck-data/
+resnet-traffic-bottleneck-data/
+vgg-cifar10-bottleneck-data/
+vgg-traffic-bottleneck-data/
